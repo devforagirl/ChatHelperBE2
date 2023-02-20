@@ -7,8 +7,8 @@ from flask_cors import CORS
 
 
 app = Flask(__name__)
-app.config["SECRET_KEY"] = "secret!"
 CORS(app)
+app.config["SECRET_KEY"] = "secret!"
 socketio = SocketIO(app)
 
 pre = "@" * 80
@@ -300,7 +300,7 @@ def handle_userDisconnect():
 
 @app.route("/")
 def home():
-    return "Hello, World! add cors2"
+    return "Hello, World! add cors3"
     # return str(chatSpeed)
 
 

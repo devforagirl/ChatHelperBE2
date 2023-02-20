@@ -7,9 +7,12 @@ from flask_cors import CORS
 
 
 app = Flask(__name__)
-CORS(app)
 app.config["SECRET_KEY"] = "secret!"
-socketio = SocketIO(app)
+
+CORS(app, cors_allowed_origins="*")
+
+socketio = SocketIO(app, cors_allowed_origins='*')
+# socketio = SocketIO(app)
 
 pre = "@" * 80
 
@@ -24,7 +27,7 @@ socket2user = {}
 
 @app.route("/")
 def home():
-    return "Hello, World! add CORS 5"
+    return "Hello, World! add new cors"
     # return str(chatSpeed)
 
 

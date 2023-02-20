@@ -3,13 +3,20 @@ import pytchat
 import time
 from flask import Flask, request
 from flask_socketio import SocketIO
-from flask_cors import CORS
+# from flask_cors import CORS
 
 
 app = Flask(__name__)
-CORS(app)
+# CORS(app)
 app.config["SECRET_KEY"] = "secret!"
 socketio = SocketIO(app)
+
+@app.after_request
+def after_request(response):
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+    response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
+    return response
 
 pre = "@" * 80
 
@@ -20,6 +27,12 @@ chatSpeed = 5
 user2socket = {}
 
 socket2user = {}
+
+
+@app.route("/")
+def home():
+    return "Hello, World! add headers"
+    # return str(chatSpeed)
 
 
 @socketio.on("examChatObject")
@@ -296,12 +309,6 @@ def handle_userDisconnect():
 
     # 广播用户离开事件
     socketio.emit("user_leave", nickname, broadcast=True)
-
-
-@app.route("/")
-def home():
-    return "Hello, World! add cors3"
-    # return str(chatSpeed)
 
 
 if __name__ == "__main__":

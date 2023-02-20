@@ -300,8 +300,8 @@ def handle_userDisconnect():
 
 @app.route("/")
 def home():
-    # return "Hello, World! 33345"
-    return str(chatSpeed)
+    return "Hello, World! add cors2"
+    # return str(chatSpeed)
 
 
 if __name__ == "__main__":

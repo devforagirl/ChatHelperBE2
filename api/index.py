@@ -41,7 +41,8 @@ def handle_updateVid(id):
 
 @app.route("/")
 def home():
-    return "Hello, World! 33345"
+    # return "Hello, World! 33345"
+    return chatSpeed
 
 
 if __name__ == "__main__":

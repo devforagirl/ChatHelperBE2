@@ -3,13 +3,13 @@ import pytchat
 import time
 from flask import Flask, request
 from flask_socketio import SocketIO
-# from flask_cors import CORS
+from flask_cors import CORS
 
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "secret!"
 
-# CORS(app, cors_allowed_origins="*")
+CORS(app)
 
 socketio = SocketIO(app, cors_allowed_origins='*')
 # socketio = SocketIO(app)
@@ -27,7 +27,7 @@ socket2user = {}
 
 @app.route("/")
 def home():
-    return "Hello, World! add SocketIO cors"
+    return "Hello, World! add SocketIO cors0221"
     # return str(chatSpeed)
 
 

@@ -27,7 +27,7 @@ socket2user = {}
 
 @app.route("/")
 def home():
-    return "Hello, World! add SocketIO cors-vercel.json"
+    return "Hello, World! add SocketIO cors-vercel.json 2"
     # return str(chatSpeed)
 
 

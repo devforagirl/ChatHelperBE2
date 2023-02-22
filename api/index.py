@@ -8,7 +8,7 @@ socketio = SocketIO(app)
 
 @app.route('/')
 def index():
-    return 'shou dao l'
+    return 'shou dao m'
 
 
 @socketio.on('connect')
@@ -25,6 +25,12 @@ def test_disconnect():
 def handle_message(message):
     print('Received message: ' + message)
     socketio.emit('response', message)
+
+@app.after_request
+def add_cors_headers(response):
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    response.headers['Access-Control-Allow-Headers'] = 'Content-Type'
+    return response
 
 
 if __name__ == '__main__':

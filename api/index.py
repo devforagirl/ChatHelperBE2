@@ -5,12 +5,12 @@ from flask_cors import CORS
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 cors = CORS(app)
-socketio = SocketIO(app, cors_allowed_origins='*')
+socketio = SocketIO(app, cors_allowed_origins='https://rss2.searchx.tk')
 
 
 @app.route('/')
 def index():
-    return 'shou dao i'
+    return 'shou dao j'
 
 @socketio.on('connect')
 def test_connect():

@@ -8,7 +8,7 @@ socketio = SocketIO(app, cors_allowed_origins="https://rss2.searchx.tk")
 
 @app.route('/')
 def index():
-    return 'shou dao o'
+    return 'shou dao p'
 
 
 @socketio.on('connect')

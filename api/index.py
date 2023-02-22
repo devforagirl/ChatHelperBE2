@@ -1,16 +1,14 @@
 from flask import Flask, jsonify
 from flask_socketio import SocketIO
-from flask_cors import CORS
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
-CORS(app)
 socketio = SocketIO(app)
 
 
 @app.route('/')
 def index():
-    return 'shou dao k'
+    return 'shou dao l'
 
 
 @socketio.on('connect')

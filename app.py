@@ -3,12 +3,12 @@ from flask_socketio import SocketIO
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
-socketio = SocketIO(app, cors_allowed_origins="https://rss2.searchx.tk")
+socketio = SocketIO(app, cors_allowed_origins="*")
 
 
 @app.route('/')
 def index():
-    return 'shou dao p'
+    return 'shou dao q'
 
 
 @socketio.on('connect')

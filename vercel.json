@@ -1,6 +1,6 @@
 {
   "version": 2,
   "builds": [
-    { "src": "/api/index", "use": "@vercel/python" }
+    { "src": "app.py", "use": "@vercel/python" }
   ]
 }

@@ -5,12 +5,12 @@ from flask_cors import CORS
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 cors = CORS(app)
-socketio = SocketIO(app)
+socketio = SocketIO(app, cors_allowed_origins='*')
 
 
 @app.route('/')
 def index():
-    return 'shou dao 1'
+    return 'shou dao i'
 
 @socketio.on('connect')
 def test_connect():

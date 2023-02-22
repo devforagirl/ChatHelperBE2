@@ -8,7 +8,7 @@ socketio = SocketIO(app, cors_allowed_origins="*")
 
 @app.route('/')
 def index():
-    return 'shou dao q2'
+    return 'shou dao q3'
 
 
 @socketio.on('connect')

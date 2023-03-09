@@ -1,3 +1,4 @@
 {
-  "python.linting.pylintPath": "venv/bin/pylint"
+  "python.linting.pylintPath": "venv/bin/pylint",
+  "python.formatting.provider": "yapf"
 }
